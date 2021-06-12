@@ -1,0 +1,119 @@
+body {
+    margin: 0;
+    font-family: Tahoma, serif;
+    font-size: 200%
+}
+
+p {
+    margin: 0;
+    padding: 0;
+}
+
+.flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100%;
+}
+
+.counter {
+    color: red;
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    height: 100vh;
+}
+
+.click-holder {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 70vh;
+    width: fit-content;
+    background-color: transparent;
+    border: 0;
+    cursor: pointer;
+    position: relative;
+}
+
+.textss{
+color: white;
+}
+
+.logoutss{
+margin-top: 10px;
+background-color: red;
+height: 50px;
+width: 100px;
+border-radius: 5px;
+text-align: center;
+color: white;
+line-height: 50px;
+}
+
+a{
+text-decoration: none;
+
+}
+
+.click-holder img {
+    height: 70%;
+    -webkit-user-drag: none;
+    -khtml-user-drag: none;
+    -moz-user-drag: none;
+    -o-user-drag: none;
+    user-drag: none;
+}
+
+.menu-container {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.click-container {
+    display: flex;
+    flex: 2;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 3vh 0;
+}
+
+.boost-container {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+
+}
+
+.boost-holder {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+.boost {
+    width: 200px;
+    height: 200px;
+    background: #46a5e0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    font-size: 100%;
+    border:0;
+}
+
+.auto {
+    background: #46e07c;
+}

@@ -1,0 +1,57 @@
+{% load static %}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CLICKER</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <script src="{% static 'js/index.js' %}"></script>
+</head>
+<body>
+    <div class='container'>
+
+        <aside class="menu-container">
+            <div>Привет, {{user.username}}</div>
+            <div class="logoutss">
+            <a class="textss" href="{% url 'logout' %}">logout</a>
+                </div>
+        </aside>
+
+        <div class="click-container">
+            Количество кликов:
+            <p class="counter" id="counter">{{maincycle.coins_count}}</p>
+            <button class="click-holder" onclick="call_click()">
+                <img id="click-image" src="{% static 'imgs/amogus.jpg' %}" alt="">
+            </button>
+            Сила клика:
+            <p id="click_power">{{maincycle.click_power}}</p>
+            Сила автоклика
+            <p id="auto_click_power">{{maincycle.auto_click_power}}</p>
+        </div>
+
+        <div class="boost-container">
+            <h3>Boosts</h3>
+            <div class="boost-holder" id="boost-holder">
+                {% for boost in boosts %}
+                    {% if boost.boost_type == 0 %}
+                        <button class="boost" id="boost_{{boost.id}}" onclick="update_boost({{boost.id}})">
+                            <p>lvl: <span id="boost_level">{{boost.level}}</span></p>
+                            <p>pow: +<span id="boost_power">{{boost.power}}</span></p>
+                            <p>buy: <span id="boost_price">{{boost.price}}</span></p>
+                        </button>
+                    {% endif %}
+                    {% if boost.boost_type == 1 %}
+                        <button class="boost auto" id="boost_{{boost.id}}" onclick="update_boost({{boost.id}})">
+                            <p>lvl: <span id="boost_level">{{boost.level}}</span></p>
+                            <p>pow: +<span id="boost_power">{{boost.power}}</span></p>
+                            <p>buy: <span id="boost_price">{{boost.price}}</span></p>
+                        </button>
+                    {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</body>
+</html>
